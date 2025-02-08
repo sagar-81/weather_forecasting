@@ -1,0 +1,24 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '11.0'
+
+ENV['COCOAPODS_DISABLE_STATS'] = 'true'
+
+project 'Runner', {
+  'Debug' => :debug,
+  'Profile' => :release,
+  'Release' => :release,
+}
+
+# Flutter integration
+flutter_root = File.expand_path('..', __FILE__) + '/..'
+load File.join(flutter_root, 'Flutter', 'flutter_export_environment.sh')
+
+# Pods for Runner
+use_frameworks!
+use_modular_headers!
+
+target 'Runner' do
+  use_frameworks!
+  use_modular_headers!
+  flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
+end
