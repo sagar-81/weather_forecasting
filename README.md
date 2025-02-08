@@ -83,7 +83,7 @@ weather_forecasting/
 ## 🛠 API Integration
 The app fetches weather data using the **OpenWeather API**. Below is an example API request:
 ```sh
-https://api.openweathermap.org/data/2.5/weather?q=London&appid=YOUR_API_KEY&units=metric
+https://api.openweathermap.org/data/2.5/forecast?q=London&appid=YOUR_API_KEY&units=metric
 ```
 - `q` → City name
 - `appid` → API Key
