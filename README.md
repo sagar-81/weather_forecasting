@@ -99,9 +99,6 @@ Pull requests are welcome! If you'd like to contribute, please follow these step
 4. Push to the branch (`git push origin feature-branch`)
 5. Create a Pull Request
 
-## 📜 License
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
-
 ---
 🚀 **Developed with ❤️ using Flutter**
 
