@@ -14,7 +14,7 @@ The **Weather Forecasting App** is a Flutter-based application that provides rea
 ## 📸 Screenshots
 | Home Screen | Search Weather | Temperature Unit Toggle |
 |------------|---------------|------------------------|
-| ![Home](../../../sagar/Contacts/Screenshot_20250208_085626.jpg)
+| ![Home](./assets/home.jpg)
 
 ## 🛠 Tech Stack
 - **Flutter** (Dart)
