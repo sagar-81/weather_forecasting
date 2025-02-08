@@ -13,7 +13,7 @@ final class GetTempLoadingState extends GetTempState {
 }
 
 final class GetTempLoadedState extends GetTempState {
-  final GetTempratureModel model;
+  final WeatherModel model;
   GetTempLoadedState(this.model);
   @override
   List<Object?> get props => [model];

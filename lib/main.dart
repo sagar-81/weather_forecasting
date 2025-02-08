@@ -9,9 +9,11 @@ import 'bloc/get_temp/get_temp_cubit.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await LocalStorageUtils.init().then((e) => {
-        log("Storage Get Initialized ....."),
-      });
+  await LocalStorageUtils.init().then(
+    (e) => {
+      log("Storage Get Initialized ....."),
+    },
+  );
   runApp(const MyApp());
 }
 

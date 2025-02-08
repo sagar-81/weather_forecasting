@@ -29,6 +29,7 @@ Ensure you have the following dependencies added to your `pubspec.yaml` file:
     flutter_bloc: ^8.1.3
     geolocator: ^10.1.0
     http: ^0.13.5
+    lottie: ^3.2.0
     shared_preferences: ^2.2.2
 ```
 

@@ -16,10 +16,10 @@ class GetTempCubit extends Cubit<GetTempState> {
       emit(GetTempLoadingState());
       String url;
       if (city != null && city.isNotEmpty) {
-        url = "https://api.openweathermap.org/data/2.5/weather?q=$city&appid=${AppString.apiKey}&units=metric";
+        url = "https://api.openweathermap.org/data/2.5/forecast?q=$city&appid=${AppString.apiKey}&units=metric";
       } else if (lat != null && lon != null) {
         url =
-            "https://api.openweathermap.org/data/2.5/weather?lat=$lat&lon=$lon&appid=${AppString.apiKey}&units=metric";
+            "https://api.openweathermap.org/data/2.5/forecast?lat=$lat&lon=$lon&appid=${AppString.apiKey}&units=metric";
       } else {
         emit(GetTempErrorState("Invalid parameters: Provide either city or latitude/longitude"));
         return;
@@ -29,7 +29,7 @@ class GetTempCubit extends Cubit<GetTempState> {
       if (response.statusCode == 200) {
         var result = jsonDecode(response.body);
         log("Response : - $result $url");
-        emit(GetTempLoadedState(getTempratureModelFromJson(json.encode(result))));
+        emit(GetTempLoadedState(weatherModelFromJson(json.encode(result))));
       } else {
         var errorResult = jsonDecode(response.body);
         emit(GetTempErrorState(errorResult['message'] ?? "Failed to fetch weather data"));
