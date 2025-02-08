@@ -14,6 +14,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   final TextEditingController _searchController = TextEditingController();
   final ValueNotifier<bool> _isFahrenheit = ValueNotifier(false);
+  bool isSearch = false;
 
   @override
   void initState() {
@@ -117,6 +118,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 suffixIcon: IconButton(
                   icon: const Icon(Icons.search),
                   onPressed: () {
+                    isSearch = true;
                     String city = _searchController.text.trim();
                     if (city.isNotEmpty) {
                       context.read<GetTempCubit>().fetchTempData(city: city);
@@ -139,6 +141,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   double temperature = weatherData.main?.temp;
                   if (_isFahrenheit.value) {
                     temperature = _convertTemperature(temperature,true);
+                  }
+
+                  if(isSearch){
+                    LocalStorageUtils.saveLastCity(weatherData.name ?? "");
+                    LocalStorageUtils.saveLastTemp(temperature.toStringAsFixed(1));
                   }
                   return Card(
                     elevation: 4,
