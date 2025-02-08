@@ -40,7 +40,7 @@ Ensure you have the following dependencies added to your `pubspec.yaml` file:
 ### Steps to Run
 1. **Clone the repository**
    ```sh
-   git clone https://github.com/your-username/weather_forecasting.git
+   git clone https://github.com/sagar-81/weather_forecasting
    cd weather_forecasting
    ```
 2. **Install dependencies**
@@ -51,7 +51,9 @@ Ensure you have the following dependencies added to your `pubspec.yaml` file:
    - Navigate to `lib/constants.dart`
    - Replace `YOUR_API_KEY` with your actual API key
    ```dart
-   const String apiKey = "YOUR_API_KEY";
+   class AppString {
+     const String apiKey = "YOUR_API_KEY";
+   }
    ```
 4. **Run the app**
    ```sh
@@ -62,17 +64,18 @@ Ensure you have the following dependencies added to your `pubspec.yaml` file:
 ```
 weather_forecasting/
 │── lib/
-│   │── main.dart                # Entry point of the app
-│   │── constants.dart           # API Keys & constants
-│   │── screens/
-│   │   ├── home_screen.dart     # Main weather UI
-│   │   ├── search_screen.dart   # Search city UI
-│   │── cubit/
-│   │   ├── get_temp_cubit.dart  # Handles weather fetching
-│   │── models/
-│   │   ├── weather_model.dart   # Data model for weather API
+│   │── main.dart
+│   │── constants.dart
+│   │── screen/
+│   │   ├── home.dart
+│   │── bloc/
+│   │   ├── get_temp_cubit.dart
+│   │   ├── get_temp_state.dart
+│   │── model/
+│   │   ├── weather_model.dart
+│   │── storage/
+│   │   ├── local_storage.dart  
 │── assets/
-│── screenshots/
 │── pubspec.yaml
 ```
 
@@ -86,10 +89,7 @@ https://api.openweathermap.org/data/2.5/weather?q=London&appid=YOUR_API_KEY&unit
 - `units=metric` → Temperature in Celsius (Use `imperial` for Fahrenheit)
 
 ## 🔥 Future Enhancements
-- 📍 Display 7-day weather forecast.
-- 🎨 Dark mode support.
 - 📊 More detailed weather stats (humidity, wind speed, etc.).
-- 🔔 Push notifications for severe weather alerts.
 
 ## 🤝 Contributing
 Pull requests are welcome! If you'd like to contribute, please follow these steps:
